@@ -17,30 +17,61 @@
 	<div id="all">
     	<div id="title">
        <?=date("m 月 d 號 l");?>  | 今日瀏覽: <?=$Total->find(['date'=>date("Y-m-d")])['total'];?> | 累積瀏覽:  <?=$Total->sum("total");?>      
-	
-	
-	
+
 	<a href="index.php" style="float:right">回首頁</a>
 	</div>
 		
         <div id="title2">
-        	
+        	<a href="index.php"><img src="icon/02B01.jpg" title="健康促進網-回首頁"></a>
         </div>
         <div id="mm">
         	<div class="hal" id="lef">
+			    <a class="blo" href="?do=acc">帳號管理</a>
             	<a class="blo" href="?do=po">分類網誌</a>
-               	<a class="blo" href="?do=news">最新文章</a>
-               	<a class="blo" href="?do=pop">人氣文章</a>
-               	<a class="blo" href="?do=know">講座訊息</a>
-               	<a class="blo" href="?do=que">問卷調查</a>
+               	<a class="blo" href="?do=news">最新文章管理</a>
+               	<a class="blo" href="?do=know">講座管理</a>
+               	<a class="blo" href="?do=que">問卷管理</a>
             </div>
             <div class="hal" id="main">
             	<div>
             		
-                	<span style="width:18%; display:inline-block;">
-                    	                    	<a href="?do=login">會員登入</a>
+                	<span style="width:80%; display:inline-block;">
+                    	            <marquee>請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地！詳見最新文章</marquee>        	
                     	                    </span>
-                    	<div class="">
+					<span style="width:18%; display:inline-block;">
+                    	            <?php 
+									if(isset($_SESSION['login'])){
+										if($_SESSION['login']){
+											?>
+											歡迎，<?=$_SESSION['login'];?><br>
+											<a href="backend.php">管理</a>
+											<a href="frontend/logout.php">登出</a>
+											<?php
+										}else{
+											?>
+											歡迎，<?=$_SESSION['login'];?><br>
+											<a href="frontend/logout.php">登出</a>
+											<?php
+										}
+										?>
+<?php
+									}else{
+										?>
+										<a href="?do=login">會員登入</a>
+										<?php
+									}  	
+									?>
+                    	                    </span>
+                    	<div class="content">
+                         <?php
+						 $do=(isset($_GET['do']))?$_GET_['do']:'home';
+                         $file='backend/'.$do.".php";
+						 if(file_exists($file)){
+							 include $file;
+						 }else{
+							 include 'backend/home.php';
+						 }
+?>
                 		                        </div>
                 </div>
             </div>
