@@ -41,7 +41,7 @@
 					<span style="width:18%; display:inline-block;">
                     	            <?php 
 									if(isset($_SESSION['login'])){
-										if($_SESSION['login']){
+										if($_SESSION['login']=='admin'){
 											?>
 											歡迎，<?=$_SESSION['login'];?><br>
 											<a href="backend.php">管理</a>

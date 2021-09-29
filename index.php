@@ -16,7 +16,7 @@
 <iframe name="back" style="display:none;"></iframe>
 	<div id="all">
     	<div id="title">
-       <?=date("m 月 d 號 l");?>  | 今日瀏覽: <?=$Total->find(['date'=>date("Y-m-d")])['total'];?> | 累積瀏覽:  <?=$Total->sum('total');?>      
+       <?=date("m月 d日 l");?> | 今日瀏覽: <?=$Total->find(['date'=>date("Y-m-d")])['total'];?> | 累積瀏覽: <?=$Total->sum('total');?>      
 	
 	
 	
@@ -50,24 +50,24 @@
 							<a href="frontend/logout.php">登出</a>
 							<?php
 						}else{
-                            ?>
-                            歡迎，<?=$_SESSION['login'];?>
-                            <a href="frontend/logout.php">登出</a>
+?>
+歡迎，<?=$_SESSION['login'];?>
+<a href="frontend/logout.php">登出</a>
 <?php
 						}
-	?>	
-	<?php				
-					}else{
 						?>
-						<a href="?do=login">會員登入</a>
 						<?php
+					}else{
+?>
+<a href="?do=login">會員登入</a>
+<?php
 					}
 					?>
 				</span>
                     	<div class="content">
 							<?php
 							$do=(isset($_GET['do']))?$_GET['do']:'home';
-							$file='frontend/' .$do.".php";
+							$file='frontend/'.$do.".php";
 							if(file_exists($file)){
 								include $file;
 							}else{
@@ -81,7 +81,7 @@
         <div id="bottom">
     	    本網站建議使用：IE9.0以上版本，1024 x 768 pixels 以上觀賞瀏覽 ， Copyright © 2021健康促進網社群平台 All Right Reserved 
     		 <br>
-    		 服務信箱：health@test.labor.gov.tw<img src="./home_files/02B02.jpg" width="45">
+    		 服務信箱：health@test.labor.gov.tw<img src="./icon/02B02.jpg" width="45">
         </div>
     </div>
 
