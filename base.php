@@ -106,6 +106,10 @@ $Mem=new DB('mem');
 $Que=new DB('que');
 $News=new DB('news');
 
+// echo $Mem->save(['acc'=>'acc','pw'`6743W26=>'12345']);
+// echo $Mem->save(['id'=>7,'acc'=>'abc','pw'=>'12345']);
+// print_r($Que->find(4));
+// echo($Que->del(70));
 if($Total->count(['date'=>date("Y-m-d")])<=0){
     $Total->save(['date'=>date("Y-m-d"),'total'=>0]);
 };

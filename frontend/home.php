@@ -21,7 +21,9 @@
     position:absolute;
     white-space: pre-wrap;
 }
-
+#tagMain{
+    position:relative;
+}
 .mainActive{
     display:block;
 }
@@ -29,21 +31,16 @@
     background:white;
     border-bottom:1px solid white;
 }
-
 </style>
 
 <div id="tags">
-<div class="tag tagActive" id="t1">健康新知</div>
-<div class="tag" id="t2">健康新知</div>
-<div class="tag" id="t3">健康新知</div>
-<div class="tag" id="t4">健康新知</div>
-
-
-
+    <div class="tag tagActive" id="t1">健康新知</div>
+    <div class="tag" id="t2">菸害防制</div>
+    <div class="tag" id="t3">癌症防治</div>
+    <div class="tag" id="t4">慢性病防法</div>
 </div>
 
-
-<div class="tagmain" >
+<div id="tabMain">
 
 <div class="block mainActive" id="m1">
 <h2>健康新知</h2>
@@ -67,7 +64,6 @@
 
 
 </div>
-
 <div class="block" id="m2">
 <h2>菸害防制</h2>
 菸害防治法規
@@ -91,8 +87,9 @@
 第三十二條　　違反本法規定，經依第二十三條至前條規定處罰者，得併公告被處分人及其違法情形。
 第三十三條　　本法所定罰則，除第二十五條規定由中央主管機關處罰外，由直轄市、縣（市）主管機關處罰之。
 
-</div>
 
+
+</div>
 <div class="block" id="m3">
 <h2>癌症防治</h2>
 降低罹癌風險 建構健康生活型態
@@ -112,10 +109,10 @@
 資料來源：行政院衛生署衛生報導139期
 上稿日期：2010/1/20
 
+
+
 </div>
-
-<div class="block" id="m4">
-
+<div class="block"  id="m4">
 <h2>慢性病防法</h2>
 長期憋尿 泌尿系統問題多 
 資料來源：中央健康保險局雙月刊第98期
@@ -140,16 +137,17 @@
 4、多注意及控制易引發膀胱炎的疾病：如糖尿病、尿路結石、攝護腺肥大等。
 如果民眾發現自己解尿不舒服時，一定要在第一時間就診，讓醫師採用檢體對症下藥，只要沒有其他的特殊問題併存，同時能接受完整療程的抗生素治療，通常一星期左右即可痊癒。不過服藥的時間及用量絕對要遵照醫師囑咐，如果自行隨意停藥或不按時服用，很可能會造成殘存的細菌出現抗藥性，非但原本的症狀無法痊癒，還可能帶來慢性泌尿道發炎、尿路結石、腎臟功能受損等併發症，千萬要特別注意。
 </div>
+
 </div>
 
 <script>
-$(".tag").on("click",function(){
-    let blockWho=$(this).attr('id').replace('t','m');
-    $(".block").removeClass("mainActive");
-    $("#"+blockWho).addClass("mainActive")
-    $(".tag").removeClass("tagActive");
-    $(this).addClass("tagActive")
 
+$(".tag").on("click",function(){
+let blockWho=$(this).attr('id').replace('t','m');
+$(".block").removeClass("mianActive");
+$("#"+blockWho).addClass("mainactive");
+$(".tag").removeClass("tagActive");
+$(this).addClass("tagActive");
 })
 
 </script>

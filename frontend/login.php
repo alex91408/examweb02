@@ -28,47 +28,30 @@
 
 <script>
 function login(){
-    let acc=$("#acc").val();
-    let pw=$("#pw").val();
+let acc=$("#acc").val();
+let pw=$("#pw").val();
 
-    $.get("api/chk_acc.php",{acc},(res)=>{
-if(res!='1'){
-    alert("查無帳號");
-}else{
-    $.get('api/chk_pw.php',{acc,pw},(chk)=>{
-if(chk!='1'){
-    alert('密碼錯誤')
-}else{
-    if(acc=='admin'){
-        location.href="backend.php";
+$.get("api/chk_acc.php",{acc},(res)=>{
+    if(res!='1'){
+        alert("查無帳號");
     }else{
-        location.href="index.php";
+        $.get('api/chk_pw.php',{acc,pw},(chk)=>{
+            if(chk!='1'){
+                alert("密碼錯誤")
+            }else{
+                if(acc=='adimn'){
+                    location.href="backend.php";
+                }else{
+                    location.href="index.php";
+                }
+            }
+        })
     }
+})
+
+
+
 }
 
-
-
-
-
-
-
-
-
-
-    })
-}
-
-
-
-
-
-
-
-
-
-
-
-    })
-}
 
 </script>
