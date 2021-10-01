@@ -1,6 +1,6 @@
 <fieldset>
 <legend>會員登入</legend>
-
+<form>
 <table class="tab">
 <tr>
     <td class='clo'>帳號:</td>
@@ -23,7 +23,7 @@
 </tr>
 
 </table>
-
+</form>
 </fieldset>
 
 <script>

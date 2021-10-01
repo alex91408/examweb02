@@ -19,11 +19,8 @@
     border:1px solid #999;
     display:none;
     position:absolute;
-    white-space: pre-wrap;
 }
-#tagMain{
-    position:relative;
-}
+
 .mainActive{
     display:block;
 }
@@ -143,11 +140,14 @@
 <script>
 
 $(".tag").on("click",function(){
-let blockWho=$(this).attr('id').replace('t','m');
-$(".block").removeClass("mianActive");
-$("#"+blockWho).addClass("mainactive");
-$(".tag").removeClass("tagActive");
-$(this).addClass("tagActive");
+ let blockWho=$(this).attr('id').replace('t','m');
+ $(".block").removeClass("mainActive");
+    $("#"+blockWho).addClass("mainActive")
+ $(".tag").removeClass("tagActive");
+    $(this).addClass("tagActive")
+
 })
+
+
 
 </script>
