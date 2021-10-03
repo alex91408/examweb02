@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td>
-                <button onclick="forgot()">尋找</button>
+            <input type="button" value="尋找" onclick="forgot()">
             </td>
         </tr>
     </table>

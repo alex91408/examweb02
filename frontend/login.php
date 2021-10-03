@@ -3,11 +3,11 @@
 <form>
 <table class="tab">
 <tr>
-    <td class='clo'>帳號:</td>
+    <td class="clo">帳號:</td>
     <td><input type="text" name="acc" id="acc"></td>
 </tr>
 <tr>
-<td class='clo'>密碼:</td>
+    <td class="clo">密碼:</td>
     <td><input type="password" name="pw" id="pw"></td>
     </tr>
 
