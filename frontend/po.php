@@ -19,25 +19,24 @@
 getList(1)
 
 $(".type").on("click",function(){
-    type=$(this).attr('id').replace("t","")
-    getList(type)
+    let type=$(this).attr('id').replace("t","");
+    getList(type);
 })
 
 function getList(type){
     $("#navType").html($("#t"+type).text());
-    $.get('api/get_list.php',{type},(list)=>{
+    $.get("api/get_list.php",{type},(list)=>{
     $("#legendTitle").html("文章列表")
     $("#titles").html(list)
     $("#Post").html("")
-})
+    })
 }
 
 function getNews(id){
-$.get('api/get_post.php',{id},(post)=>{
+    $.get("api/get_post.php",{id},(post)=>{
     $("#legendTitle").html("文章內容")
     $("#titles").html("")
     $("#Post").html(post)
-})
-
+    })
 }
 </script>
