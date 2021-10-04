@@ -122,7 +122,7 @@ if(!isset($_SESSION['total'])){
 }
 
  function to($url){
-    header("loction:".$url);
+    header("location:".$url);
 }
 
 
