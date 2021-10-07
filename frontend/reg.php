@@ -45,7 +45,7 @@
                 }else{
             $.post('api/save_reg.php',{acc,pw,email},(chk)=>{
                 console.log(chk,typeof(chk))
-                if(chk==1){
+                if(chk=='1'){
                     alert("註冊完成，歡迎加入")
                 }else{
                     alert("註冊失敗，請洽管理員")

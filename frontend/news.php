@@ -18,8 +18,7 @@
     $pages=ceil($all/$div);
     $now=$_GET['p']??1;
     $start=($now-1)*$div;
-    //$now=(isset($_GET['p']))?$_GET['p']:1;
-    $news=$News->all(['sh'=>1]," limit $start,$div");
+    $news=$News->all(['sh'=>1],"limit $start,$div");
     foreach($news as $n){
     ?>
     <tr>
