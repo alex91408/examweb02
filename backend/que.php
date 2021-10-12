@@ -2,13 +2,11 @@
     <legend>新增問卷</legend>
     <form action="api/admin_que.php" method="post">
     <div style="display:flex">
-        <div class="clo">問卷名稱</div>
-        <div>
-            <input type="text" name="subject" >
-        </div>
+    <div class="clo">問卷名稱</div>
+    <input type="text" name="subject">
     </div>
     <div id="options" class="clo">
-        選項<input type="text" name="opts[]" >
+        選項<input type="text" name="opts[]">
         <input type="button" value="更多" onclick="more()">
     </div>
     <div>
@@ -19,7 +17,7 @@
 </fieldset>
 <script>
     function more(){
-        let opt=`選項<input type="text" name="opts[]" ><br>`
+        let opt=`選項<input type="text" name="opts[]"><br>`
         $("#options").prepend(opt)
 
     }
