@@ -66,7 +66,7 @@
 				</span>
                     	<div class="content">
 							<?php
-							$do=(isset($_GET['do']))?$_GET['do']:'home';
+							$do=$_GET['do']??'home';
 							$file='frontend/'.$do.".php";
 							if(file_exists($file)){
 								include $file;
